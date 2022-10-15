@@ -1,14 +1,14 @@
 module.exports = {
   pathPrefix: '/workouts_page', // Change to `/running_page` when running on github pages
   siteMetadata: {
-    siteTitle: 'Workouts Map',
+    siteTitle: 'Fitness Map',
     siteUrl: 'https://fitness.jeremymo.top:66',
     logo: 'https://jeremymo.top:66/imgURL/CAMP-IMPALA-X.jpg',
     description: 'Personal Workouts Page',
     keywords: 'workouts, running, cycling, riding, roadtrip, hiking, swimming',
     navLinks: [
       {
-        name: 'strava',
+        name: 'Strava',
         url: 'https://www.strava.com/athletes/108871715',
       },
       {
