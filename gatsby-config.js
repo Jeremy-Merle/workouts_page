@@ -2,18 +2,18 @@ module.exports = {
   pathPrefix: '/running_page', // Change to `/running_page` when running on github pages
   siteMetadata: {
     siteTitle: 'Workouts Map',
-    siteUrl: 'https://ben29.xyz',
-    logo: 'https://avatars3.githubusercontent.com/u/6956444?s=460&u=97e1062227c4088db3c987146455245c6fa78441',
+    siteUrl: 'https://fitness.jeremymo.top:66',
+    logo: 'https://jeremymo.top:66/imgURL/CAMP-IMPALA-X.jpg',
     description: 'Personal Workouts Page',
     keywords: 'workouts, running, cycling, riding, roadtrip, hiking, swimming',
     navLinks: [
       {
-        name: 'Blog',
-        url: 'https://ben29.xyz',
+        name: 'strava',
+        url: 'https://www.strava.com/athletes/108871715',
       },
       {
-        name: 'About',
-        url: 'https://github.com/ben-29/running_page/blob/master/README-CN.md',
+        name: '行者',
+        url: 'https://www.imxingzhe.com/portal/#!/',
       },
     ],
   },

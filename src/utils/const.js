@@ -1,6 +1,6 @@
 // const
 const MAPBOX_TOKEN =
-    'pk.eyJ1IjoiYmVuLTI5IiwiYSI6ImNrZ3Q4Ym9mMDBqMGYyeXFvODV2dWl6YzQifQ.gSKoWF-fMjhzU67TuDezJQ';
+  'pk.eyJ1IjoiYmVuLTI5IiwiYSI6ImNrZ3Q4Ym9mMDBqMGYyeXFvODV2dWl6YzQifQ.gSKoWF-fMjhzU67TuDezJQ';
 const MUNICIPALITY_CITIES_ARR = [
   '北京市',
   '上海市',
@@ -11,7 +11,7 @@ const MUNICIPALITY_CITIES_ARR = [
 ];
 
 // styling: set to `true` if you want dash-line route
-const USE_DASH_LINE = true;
+const USE_DASH_LINE = false;
 // styling: route line opacity: [0, 1]
 const LINE_OPACITY = 0.4;
 // styling: map height
@@ -21,10 +21,10 @@ const MAP_HEIGHT = 600;
 const IS_CHINESE = true;
 const USE_ANIMATION_FOR_GRID = false;
 const CHINESE_INFO_MESSAGE = (yearLength, year) =>
-  `户外运动 ${yearLength} 年 ` + ( year === 'Total' ? '' : `，地图展示的是 ${year} 年的轨迹`);
+  `户外运动 ${yearLength} 年 ` + (year === 'Total' ? '' : `，地图展示的是 ${year} 年的轨迹`);
 
 const ENGLISH_INFO_MESSAGE = (yearLength, year) =>
-  `Logged ${yearLength} Years of Outdoor Journey` +  ( year === 'Total' ? '' : `, the map shows routes in ${year}`);
+  `Logged ${yearLength} Years of Outdoor Journey` + (year === 'Total' ? '' : `, the map shows routes in ${year}`);
 
 // not support English for now
 const CHINESE_LOCATION_INFO_MESSAGE_FIRST =
