@@ -8473,5 +8473,20 @@
 "average_speed": 6.332,
 "source": "strava",
 "streak": 5
+},
+{
+"run_id": 10289450109,
+"name": "\u5348\u540e\u8fdc\u8db3",
+"distance": 2739.7,
+"moving_time": "1:02:41",
+"type": "Hike",
+"start_date": "2023-11-26 06:32:39+00:00",
+"start_date_local": "2023-11-26 14:32:39",
+"location_country": "\u80af\u5fb7\u57fa, \u7075\u7afa\u8def, \u7075\u9690, \u897f\u6e56\u8857\u9053, \u897f\u6e56\u533a, \u676d\u5dde\u5e02, \u6d59\u6c5f\u7701, 310013, \u4e2d\u56fd",
+"summary_polyline": "kwqwDmi`|UFRFp@HFDPD\\CTJ@AAm@@a@DQ?UJS@]M_@ASQSEOKY[We@UCAMCK?COO?EKMYQMC[Oq@a@AGJEI?IISa@OQAGQX@BABYTC@KGOCHEDMFBJLHb@PPTh@r@lA^hALN@DECJJRj@PVCCBLAA^p@Xn@n@pAL^JLd@pANXPJEFAJSNGRGDKR?JKPKt@SHo@FSJa@`@KDIJ_@MUASGGGO@CIFABCAAFAGNIr@CBKCe@q@UKK?EJODIX?CE?AI@BE@F?RRDZALEBIAEHGD?DIJDPEJ@PFVGDEC@IBHC@LL?DNR?PDXAJDPC\\Mb@?PI\\?f@ILq@b@MRWR?BNL?HES?FC?J@IDCA?CCFM@FEBBBCI?D@CC?FC@FLCNMCG?PT?\\E@EC?CGECPYKc@LLJDJ?NAPIAMMACDCA?I@ATEFSOENYAYM?DHZC@?`@IHISC?CFA@EMMMUUE?Jj@?FEPIDIJC?CEE?OHI?EDSGABD@ACOC\\QBBFC?ACCBCB?EACBCCBELCAK?BDCPXE_@@Hm@XKETQPDA@@CH?HHHE?MSJCAAEJGPCDIC@@BGAIJG@@GA?B@?DB?FEDGDDAAADG?F?AF@E",
+"average_heartrate": 112.3,
+"average_speed": 0.728,
+"source": "strava",
+"streak": 6
 }
 ]
