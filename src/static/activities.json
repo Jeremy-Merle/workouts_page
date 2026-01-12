@@ -12286,5 +12286,21 @@
 "elevation_gain": 13.8,
 "source": "strava",
 "streak": 3
+},
+{
+"run_id": 17008955795,
+"name": "\u5348\u540e\u8dd1\u6b65",
+"distance": 3031.9,
+"moving_time": "0:18:26",
+"type": "Run",
+"start_date": "2026-01-11 09:24:37+00:00",
+"start_date_local": "2026-01-11 17:24:37",
+"location_country": "\u5b66\u6797\u8857, \u767d\u6768\u8857\u9053, \u94b1\u5858\u533a, \u676d\u5dde\u5e02, \u6d59\u6c5f\u7701, 310018, \u4e2d\u56fd",
+"summary_polyline": "yt`xDacn}UEAwB@g@HUPOZE`@D^HRPRPFRDpCAXCVKPWFU@WC]GOSUUM[CiC@a@DOJOVI\\@\\FXNTNJTFnC?f@ETOLSFSB[E[KUWUQEyCCU@QDUPKRG^@ZFVNTTNNBr@BjBC^IROHQF]Ac@IWOSSKWCsCAWBKDKHILM^?d@BPHRJLNJXDpCAXCTINOJUFYAYGWMUSM]GsC?a@DUPMVGX@b@FTNRRNPDfD?HA^]HW@SC]I]ISSKc@C{B?_@BUNMPIZATDZJVPNVJvC@b@ERMLUHW?_@GWOYSMSE{CAYDSLORGV?d@DPLVVPPDzCBLAVIRUHUBYCa@O[QQQG_@C",
+"average_heartrate": 163.9,
+"average_speed": 2.741,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 1
 }
 ]
