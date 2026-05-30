@@ -14302,5 +14302,21 @@
 "elevation_gain": 9.0,
 "source": "strava",
 "streak": 2
+},
+{
+"run_id": 18701394837,
+"name": "CAMP IMPALA X\uff086600km\uff09\u9000\u5f79\u8363\u8a89\u9a91",
+"distance": 40056.7,
+"moving_time": "1:48:05",
+"type": "Ride",
+"start_date": "2026-05-29 09:27:08+00:00",
+"start_date_local": "2026-05-29 17:27:08",
+"location_country": "\u676d\u5dde\u7535\u5b50\u79d1\u6280\u5927\u5b66\u7814\u7a76\u751f\u516c\u5bd3, \u767d\u6768\u8857\u9053, \u94b1\u5858\u533a, \u676d\u5dde\u5e02, \u6d59\u6c5f\u7701, 310018, \u4e2d\u56fd",
+"summary_polyline": "_r`xDk~r}UBVJPt@DBI?q@QaA\\u@Hg@D}CEkZReFhG{[T_@Hs@A_AN_C?eAT{BRsETyCAeMDqAEoCF{@?wEEg@D{EEcIB_ND{@Gy@BuCEwAFqKCoDDoGEyCNo@P[K_@r@mCDi@y@i@y@eAaEaBwAUg@g@gDuAe\\}JMAIHU`@gAjAAQ`@iAEGm@|BGK`AsDjq@s~BVy@RGTi@`AeD@SIJmAfEP[lAoD?IGFMl@cAlCoAYMMAMZqAjAeEh@uANy@Ce_@DsACoTC{LEc@ByID]f@E|CH~G\\jED`ERd@`@r@hAz@d@`@@VOP]nAuFbAgGnAeKLi@`@kGd@iNJwHCcJBgJBkEF_AAeDJa@h@UbFk@rKm@jA?nBStCIt@MtBIrADdLIjEJnBKzAJzKKnADhEYpOmApBEr_@sC|@Ch@HTUhA@|B_@`FWjD]fAAlMaA|ZeC|a@sC|VsBxCSdAD^Wd@L~@OpDKjH?rEJz@Ebe@X`ALhIEfJD^Jz@GjE@f@Pr@D`AKrFC`[PfBD`@JR_@Lw@^yS`ByPRw@h@gAX]J]VyAZkD~@iE\\gBf@mFAeBJQFcAjA_K|AkLTo@@w@J]xAeMTy@d@kDXS^AzW`GX?zCl@zC|@nB`@JIFu@VBLQ`A_HnAmJDy@d@cELg@Ea@XoC~@aIh@kDhEs_@hEs^hAyKtD}[rCiU\\gBV{C`@sBz@wB~@aBnCyDr@oAn@_Bt@qC~Iag@lBaJZeCpEaV~@qHh@}HXiC\\kCfAaGfKse@nA}EhHw_@|EoX~AoIxAgH^wAj@{AZyA|BeHjF_SnAiHfDgVRi@b@CtJxDr@LRm@f@mC~@kDnDkKj@uArCgE~CsFxIoZzCkJlVnHzAf@`A`@`PpExB|@hCl@~VtH`DhAdFtAfKdDdDr@bLxCpA`@HNh@@vFrAjE|AxPvEpAVNYFA~LpDN?JSj@cDNCTVi@]?KbAwE~@NjFlBlCt@hANf@yAh@aCd@Mp[hKnJlCxJdD`Dz@PSTs@\\WJYp@cDp@kGr@yDz@iDf@{AhAcCN?`@X\\Kf@gArAgAr@cA^y@Ru@t@_ETwBz@cGf@gI?oDK_BJc@TQ`JaA|Ce@j@_@V_@Bi@`AsG`EuT`@eBhCiOb@{DdAgMr@{Kh@oJVUVB`Cd@pBn@|@E^V\\D",
+"average_heartrate": 113.9,
+"average_speed": 6.177,
+"elevation_gain": 76.0,
+"source": "strava",
+"streak": 3
 }
 ]
