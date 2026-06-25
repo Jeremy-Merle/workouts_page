@@ -14638,5 +14638,21 @@
 "elevation_gain": 0.0,
 "source": "strava",
 "streak": 1
+},
+{
+"run_id": 19051511819,
+"name": "\u676d\u5dde\u5e02 \u64cd\u573a\u8dd1\u6b65",
+"distance": 5072.1,
+"moving_time": "0:26:41",
+"type": "Run",
+"start_date": "2026-06-24 14:04:47+00:00",
+"start_date_local": "2026-06-24 22:04:47",
+"location_country": "\u676d\u5dde\u7535\u5b50\u79d1\u6280\u5927\u5b66(\u4e0b\u6c99\u6821\u533a), 1158\u53f7, 2\u53f7\u5927\u8857, \u767d\u6768\u8857\u9053, \u94b1\u5858\u533a, \u676d\u5dde\u5e02, \u6d59\u6c5f\u7701, 310018, \u4e2d\u56fd",
+"summary_polyline": "uf`xDeqo}U_CE[CS@WPQVIb@CTBTFTR^HF^LT?n@C`@Bp@?f@INKR]DS@]EUOa@OOWKe@GiAF[AICk@B[PINM\\A^Lj@HNRVb@H\\AB@dAEr@@RC\\MHKFKFe@Ce@Me@EIICAE[K_@EM@M@GH_BA[DWNMRGTCZD\\JRNNTJh@BtB@ZAVMPQFQDW?WEYQYUOSE_AA}AASBUJSTK\\ARD\\FTPPTLTBdC@d@CRKPSJ[@YAWM[OQUK[CcCAa@DUJMPITE\\D^FRNPVLXDhC@\\EPIRUHUB]AWK[OQYMSCgCA_@BUHSTK\\ATBZJXPRRJTBdC@RANCRIRUHWB[E_@ISOQUMWCoCAQ@YLOPKTE\\B\\HTRVRJP@bCBf@CVKPUHWBYC_@ISOQUMQE_@?yBASBQFSTM^CVBZHTNPVNZB`C?T?NCTMJMJ[B[C]MYMOWKOCmA?gAAUBYNQTIZAXDZLVLNRHVBrC?PCXMPUHW@[E]KWQOSISCsCAYDSJOTKXAXBVFTNPTNZDhC?XATITWJ]@UAWK[QSUKUCiBAk@?QBWJQRGTE\\BZHTNTVL\\BzB?f@CTMLOJYB_@Ga@KSOOWK_DCYBSJUXGVC^FZLVPNRH`D@NAPE",
+"average_heartrate": 158.2,
+"average_speed": 3.168,
+"elevation_gain": 0.0,
+"source": "strava",
+"streak": 1
 }
 ]
