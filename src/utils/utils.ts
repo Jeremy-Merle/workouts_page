@@ -1,13 +1,6 @@
-import * as mapboxPolyline from '@mapbox/polyline';
-import gcoord from 'gcoord';
-import { WebMercatorViewport } from '@math.gl/web-mercator';
-import { chinaGeojson, RPGeometry } from '@/static/run_countries';
-import worldGeoJson from '@surbowl/world-geo-json-zh/world.zh.json';
 import { chinaCities } from '@/static/city';
 import {
-  MAIN_COLOR,
   MUNICIPALITY_CITIES_ARR,
-  NEED_FIX_MAP,
   RUN_TITLES,
   RIDE_COLOR,
   VIRTUAL_RIDE_COLOR,
@@ -21,18 +14,19 @@ import {
   SNOWBOARD_COLOR,
   TRAIL_RUN_COLOR,
   RICH_TITLE,
-  MAP_TILE_STYLES,
+  getRuntimeSingleColor,
 } from './const';
-import {
-  FeatureCollection,
-  LineString,
-  Feature,
-  GeoJsonProperties,
-} from 'geojson';
 
 export type Coordinate = [number, number];
 
 export type RunIds = Array<number> | [];
+
+// Check for units environment variable
+const IS_IMPERIAL = import.meta.env.VITE_USE_IMPERIAL === 'true';
+export const M_TO_DIST = IS_IMPERIAL ? 1609.344 : 1000; // Meters to Mi or Km
+export const M_TO_ELEV = IS_IMPERIAL ? 3.28084 : 1; // Meters to Feet or Meters
+export const DIST_UNIT = IS_IMPERIAL ? 'mi' : 'km'; // Label
+export const ELEV_UNIT = IS_IMPERIAL ? 'ft' : 'm'; // Label
 
 export interface Activity {
   run_id: number;
@@ -53,19 +47,19 @@ export interface Activity {
 
 const titleForShow = (run: Activity): string => {
   const date = run.start_date_local.slice(0, 11);
-  const distance = (run.distance / 1000.0).toFixed(2);
+  const distance = (run.distance / M_TO_DIST).toFixed(2);
   let name = 'Run';
   if (run.name) {
     name = run.name;
   }
-  return `${name} ${date} ${distance} KM ${
+  return `${name} ${date} ${distance} ${DIST_UNIT} ${
     !run.summary_polyline ? '(No map data for this workout)' : ''
   }`;
 };
 
 const formatPace = (d: number): string => {
   if (Number.isNaN(d) || d == 0) return '0';
-  const pace = (1000.0 / 60.0) * (1.0 / d);
+  const pace = (M_TO_DIST / 60.0) * (1.0 / d);
   const minutes = Math.floor(pace);
   const seconds = Math.floor((pace - minutes) * 60.0);
   return `${minutes}'${seconds.toFixed(0).toString().padStart(2, '0')}"`;
@@ -96,10 +90,9 @@ const formatRunTime = (moving_time: string): string => {
 
 // for scroll to the map
 const scrollToMap = () => {
-  const el = document.querySelector('.fl.w-100.w-70-l');
-  const rect = el?.getBoundingClientRect();
-  if (rect) {
-    window.scroll(rect.left + window.scrollX, rect.top + window.scrollY);
+  const mapContainer = document.getElementById('map-container');
+  if (mapContainer) {
+    mapContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 };
 
@@ -207,59 +200,6 @@ const intComma = (x = '') => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
 
-const pathForRun = (run: Activity): Coordinate[] => {
-  try {
-    if (!run.summary_polyline) {
-      return [];
-    }
-    const c = mapboxPolyline.decode(run.summary_polyline);
-    // reverse lat long for mapbox
-    c.forEach((arr) => {
-      [arr[0], arr[1]] = !NEED_FIX_MAP
-        ? [arr[1], arr[0]]
-        : gcoord.transform([arr[1], arr[0]], gcoord.GCJ02, gcoord.WGS84);
-    });
-    // try to use location city coordinate instead , if runpath is incomplete
-    if (c.length === 2 && String(c[0]) === String(c[1])) {
-      const { coordinate } = locationForRun(run);
-      if (coordinate?.[0] && coordinate?.[1]) {
-        return [coordinate, coordinate];
-      }
-    }
-    return c;
-  } catch (err) {
-    return [];
-  }
-};
-
-const geoJsonForRuns = (runs: Activity[]): FeatureCollection<LineString> => ({
-  type: 'FeatureCollection',
-  features: runs.map((run) => {
-    const points = pathForRun(run);
-
-    return {
-      type: 'Feature',
-      properties: {
-        color: colorFromType(run.type),
-      },
-      geometry: {
-        type: 'LineString',
-        coordinates: points,
-        workoutType: run.type,
-      },
-      name: run.name,
-    };
-  }),
-});
-
-const geoJsonForMap = (): FeatureCollection<RPGeometry> => ({
-  type: 'FeatureCollection',
-  features: [...worldGeoJson.features, ...chinaGeojson.features] as Feature<
-    RPGeometry,
-    GeoJsonProperties
-  >[],
-});
-
 const titleForType = (type: string): string => {
   switch (type) {
     case 'Run':
@@ -290,6 +230,8 @@ const titleForType = (type: string): string => {
       return RUN_TITLES.KAYAKING_TITLE;
     case 'Snowboard':
       return RUN_TITLES.SNOWBOARD_TITLE;
+    case 'BackcountrySki':
+      return RUN_TITLES.BACKCOUNTRY_SKI_TITLE;
     case 'Ski':
       return RUN_TITLES.SKI_TITLE;
     default:
@@ -349,74 +291,33 @@ const titleForRun = (run: Activity): string => {
 const colorFromType = (workoutType: string): string => {
   switch (workoutType) {
     case 'Run':
-      return RUN_COLOR;
+      return getRuntimeSingleColor(RUN_COLOR);
     case 'Trail Run':
-      return TRAIL_RUN_COLOR;
+      return getRuntimeSingleColor(TRAIL_RUN_COLOR);
     case 'Ride':
     case 'Indoor Ride':
-      return RIDE_COLOR;
+      return getRuntimeSingleColor(RIDE_COLOR);
     case 'VirtualRide':
-      return VIRTUAL_RIDE_COLOR;
+      return getRuntimeSingleColor(VIRTUAL_RIDE_COLOR);
     case 'Hike':
-      return HIKE_COLOR;
+      return getRuntimeSingleColor(HIKE_COLOR);
     case 'Rowing':
-      return ROWING_COLOR;
+      return getRuntimeSingleColor(ROWING_COLOR);
     case 'Swim':
-      return SWIM_COLOR;
+      return getRuntimeSingleColor(SWIM_COLOR);
     case 'RoadTrip':
-      return ROAD_TRIP_COLOR;
+      return getRuntimeSingleColor(ROAD_TRIP_COLOR);
     case 'Flight':
-      return FLIGHT_COLOR;
+      return getRuntimeSingleColor(FLIGHT_COLOR);
     case 'Kayaking':
-      return KAYAKING_COLOR;
+      return getRuntimeSingleColor(KAYAKING_COLOR);
     case 'Snowboard':
     case 'Ski':
-      return SNOWBOARD_COLOR;
+    case 'BackcountrySki':
+      return getRuntimeSingleColor(SNOWBOARD_COLOR);
     default:
-      return MAIN_COLOR;
+      return getRuntimeSingleColor();
   }
-};
-
-export interface IViewState {
-  longitude?: number;
-  latitude?: number;
-  zoom?: number;
-}
-
-const getBoundsForGeoData = (
-  geoData: FeatureCollection<LineString>
-): IViewState => {
-  const { features } = geoData;
-  let points: Coordinate[] = [];
-  // find first have data
-  for (const f of features) {
-    if (f.geometry.coordinates.length) {
-      points = f.geometry.coordinates as Coordinate[];
-      break;
-    }
-  }
-  if (points.length === 0) {
-    return { longitude: 20, latitude: 20, zoom: 3 };
-  }
-  if (points.length === 2 && String(points[0]) === String(points[1])) {
-    return { longitude: points[0][0], latitude: points[0][1], zoom: 9 };
-  }
-  // Calculate corner values of bounds
-  const pointsLong = points.map((point) => point[0]) as number[];
-  const pointsLat = points.map((point) => point[1]) as number[];
-  const cornersLongLat: [Coordinate, Coordinate] = [
-    [Math.min(...pointsLong), Math.min(...pointsLat)],
-    [Math.max(...pointsLong), Math.max(...pointsLat)],
-  ];
-  const viewState = new WebMercatorViewport({
-    width: 800,
-    height: 600,
-  }).fitBounds(cornersLongLat, { padding: 200 });
-  let { longitude, latitude, zoom } = viewState;
-  if (features.length > 1) {
-    zoom = 11.5;
-  }
-  return { longitude, latitude, zoom };
 };
 
 const filterYearRuns = (run: Activity, year: string) => {
@@ -460,7 +361,7 @@ const filterAndSortRuns = (
   item2: string | null,
   filterFunc2: ((_run: Activity, _bvalue: string) => boolean) | null
 ) => {
-  let s = activities;
+  let s = activities.slice();
   if (item !== 'Total') {
     s = activities.filter((run) => filterFunc(run, item));
   }
@@ -478,29 +379,12 @@ const sortDateFunc = (a: Activity, b: Activity) => {
 };
 const sortDateFuncReverse = (a: Activity, b: Activity) => sortDateFunc(b, a);
 
-const getMapStyle = (vendor: string, styleName: string, token: string) => {
-  const style = (MAP_TILE_STYLES as any)[vendor][styleName];
-  if (!style) {
-    return MAP_TILE_STYLES.default;
-  }
-  if (vendor === 'maptiler' || vendor === 'stadiamaps') {
-    return style + token;
-  }
-  return style;
-};
-
-const isTouchDevice = () =>
-  'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
 export {
   titleForShow,
   formatPace,
   scrollToMap,
   locationForRun,
   intComma,
-  pathForRun,
-  geoJsonForRuns,
-  geoJsonForMap,
   titleForRun,
   typeForRun,
   titleForType,
@@ -510,11 +394,8 @@ export {
   filterAndSortRuns,
   sortDateFunc,
   sortDateFuncReverse,
-  getBoundsForGeoData,
   filterTypeRuns,
   colorFromType,
   formatRunTime,
   convertMovingTime2Sec,
-  getMapStyle,
-  isTouchDevice,
 };
