@@ -14832,22 +14832,6 @@
 "streak": 2
 },
 {
-"run_id": 1784628946000,
-"name": "\u722c\u697c\u68af",
-"distance": 1593.02,
-"moving_time": "0:35:12.117000",
-"type": "generic",
-"start_date": "2026-07-21 10:15:46",
-"start_date_local": "2026-07-21 18:15:46",
-"location_country": "",
-"summary_polyline": null,
-"average_heartrate": 150.0,
-"average_speed": 0.759,
-"elevation_gain": 0.0,
-"source": "",
-"streak": 3
-},
-{
 "run_id": 1784714045000,
 "name": "\u8dd1\u6b65",
 "distance": 7007.74,
@@ -14861,7 +14845,7 @@
 "average_speed": 2.863,
 "elevation_gain": 10.0,
 "source": "",
-"streak": 4
+"streak": 1
 },
 {
 "run_id": 1784716544000,
@@ -14877,7 +14861,7 @@
 "average_speed": 1.136,
 "elevation_gain": 2.0,
 "source": "",
-"streak": 4
+"streak": 1
 },
 {
 "run_id": 1784800721000,
@@ -14893,7 +14877,7 @@
 "average_speed": 3.043,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 5
+"streak": 2
 },
 {
 "run_id": 1784802446000,
@@ -14909,6 +14893,6 @@
 "average_speed": 1.23,
 "elevation_gain": 6.0,
 "source": "",
-"streak": 5
+"streak": 2
 }
 ]
