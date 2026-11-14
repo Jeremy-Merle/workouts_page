@@ -16158,5 +16158,21 @@
 "elevation_gain": 0.0,
 "source": "",
 "streak": 5
+},
+{
+"run_id": 1794476107000,
+"name": "Afternoon \u865a\u62df\u8dd1\u6b65",
+"distance": 6039.89,
+"moving_time": "0:33:45.005000",
+"type": "Run",
+"start_date": "2026-11-12 09:35:07",
+"start_date_local": "2026-11-12 17:35:07",
+"location_country": "",
+"summary_polyline": null,
+"average_heartrate": 149.0,
+"average_speed": 2.983,
+"elevation_gain": 0.0,
+"source": "",
+"streak": 6
 }
 ]
