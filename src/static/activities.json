@@ -16318,5 +16318,21 @@
 "elevation_gain": 0.0,
 "source": "",
 "streak": 5
+},
+{
+"run_id": 1795684998000,
+"name": "Afternoon \u5065\u8d70",
+"distance": 3099.38,
+"moving_time": "0:47:26.177000",
+"type": "Hike",
+"start_date": "2026-11-26 09:23:18",
+"start_date_local": "2026-11-26 17:23:18",
+"location_country": "",
+"summary_polyline": null,
+"average_heartrate": 119.0,
+"average_speed": 1.089,
+"elevation_gain": 0.0,
+"source": "",
+"streak": 6
 }
 ]
